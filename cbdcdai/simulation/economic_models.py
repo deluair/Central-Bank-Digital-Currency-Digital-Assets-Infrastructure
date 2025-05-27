@@ -105,7 +105,7 @@ class EconomicModels:
         
         # LM curve: M/P = L(Y, r)
         lm_interest = ((money_supply / cbdc_impact - money_demand_autonomous) /
-                      money_demand_sensitivity)
+                      (money_demand_sensitivity * is_output))
         
         return is_output, lm_interest
     
